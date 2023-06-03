@@ -1,4 +1,4 @@
-import discord #Импортируем библиотеку "disnake" // Import the "disnake" library
+import disnake #Импортируем библиотеку "disnake" // Import the "disnake" library
 from disnake.ext import commands
 from config import settings
 
@@ -15,6 +15,11 @@ bot = MyBot(command_prefix=settings['PREFIX'], intents = intents) #Ваш пре
 @bot.command()
 async def test(ctx):
 	await ctx.send("Привет! // Hello!")
+	print("Тест команда была успешно выполнена // The test command has been executed")
+
+@bot.slash_command(name="test", description="Это описание // This is Description!")
+async def test_slash(inter: disnake.CommandInteraction):
+	await inter.response.send("Привет! // Hello!")
 	print("Тест команда была успешно выполнена // The test command has been executed")
 
  # Токен бота можно получить на https://discord.com/developers/applications // Bot token available at https://discord.com/developers/applications
