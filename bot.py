@@ -1,4 +1,4 @@
-import discord #Импортируем библиотеку "disnake" // Import the "disnake" library
+import disnake #Импортируем библиотеку "disnake" // Import the "disnake" library
 from disnake.ext import commands
 from config import settings
 
