@@ -17,5 +17,10 @@ async def test(ctx):
 	await ctx.send("Привет! // Hello!")
 	print("Тест команда была успешно выполнена // The test command has been executed")
 
+@bot.slash_command(name="test", description="Это описание // This is Description!")
+async def test_slash(inter: disnake.CommandInteraction):
+	await inter.response.send("Привет! // Hello!")
+	print("Тест команда была успешно выполнена // The test command has been executed")
+
  # Токен бота можно получить на https://discord.com/developers/applications // Bot token available at https://discord.com/developers/applications
 bot.run(settings['TOKEN'])
